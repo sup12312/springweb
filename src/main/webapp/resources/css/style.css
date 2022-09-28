@@ -1,0 +1,95 @@
+@charset "UTF-8";
+.login{
+	border:1px solid gray;
+	position:fixed;
+	left:50%;
+	top:50%;
+	width:350px;
+	height:250px;
+	text-align:center;
+	background-color:white;
+	transform:translate(-50%,-50%);
+}
+.pw1 > input[type=text],.pw1 > input[type=password]{
+	display:block;
+	margin:8px;
+	margin-left:75px;
+	width:200px;
+}
+.pw1 > input[type=submit]{
+	width:210px;
+}
+div.topnav{
+  overflow: hidden;
+  background-color: #333;
+  position:sticky;
+  top:50px;
+  left:50px;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+div.topnav > a.log1{
+	float: right;
+}
+.pw1{
+	height:150px;
+}
+.board{
+	width:100%;
+	height:300px;
+	text-align:center;
+	border-collapse: collapse;
+}
+.board tr:nth-child(even){
+	background-color: lightblue;
+}
+.board td {
+	border-bottom:1px solid #ddd;
+	text-decoration: none;
+}
+.board tr:hover {
+	background:coral; 
+}
+th{
+	border-bottom:1px solid black;
+	background-color:#04AA6D;
+}
+div#modal{
+	display:none;
+	z-index:1;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.3);
+	overflow:auto;
+}
+div.content{
+	border:1px solid gray;
+	position:fixed;
+	left:50%;
+	top:50%;
+	width:350px;
+	height:400px;
+	text-align:center;
+	background-color:white;
+	transform:translate(-50%,-50%);	
+}
+a.exit{
+	text-decoration: none;
+	float:right;
+}
+div.contentbox{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:80%;
+}

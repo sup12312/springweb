@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="com.khs.mapper.Replymapper">
+	<insert id="insert">
+		INSERT INTO reply(seqno,content,id,board_seqno) 
+		VALUES (reply_seq.nextval,#{content},#{id},#{boardNo})
+	</insert>
+	
+	
+	<select id="list" resultType="com.khs.dto.ReplyDB">
+		<!--reply 뒤는 인덱스이름  -->
+		<![CDATA[ 
+		SELECT * FROM(
+			SELECT /*+INDEX(reply PK_REPLY) */
+			 rownum rn,board_seqno,seqno,content,TO_CHAR(wdate , 'yyyy-mm-dd')wdate,id FROM reply 
+			WHERE board_seqno = #{no} AND rownum <= #{c.cpage}*#{c.row}
+		) WHERE rn > (#{c.cpage} - 1)*#{c.row}
+		]]> 
+	</select>
+	
+	<select id="detail" resultType="com.khs.dto.ReplyDB">
+		SELECT * FROM reply WHERE seqno = #{no}
+	</select>
+	
+	<update id="update">
+		UPDATE reply SET content = #{content} WHERE seqno = #{seqno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM reply WHERE seqno = #{no}
+	</delete>
+	
+	<select id="total" resultType="int">
+		SELECT COUNT(*) FROM reply WHERE board_seqno = #{no}
+	</select>
+</mapper>
+

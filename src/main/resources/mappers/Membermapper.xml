@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<!-- 인터페이스 이름(com.khs.mapper.MemberMap)과 xml의 namespace 속성값이 일치해야함 -->
+
+<mapper namespace="com.khs.mapper.MemberMapper">
+	<!-- id는 인터페이스의 메소드이름과 같아야함 -->
+	<select id="gettime" resultType="com.khs.dto.Member">
+		select * from member where id = #{id}
+	</select>
+
+
+</mapper>

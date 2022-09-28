@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+table.c {
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 2;
+  width:100%;
+}
+
+table.c thead th{
+  padding: 10px;
+  font-weight: bold;
+  color: #369;
+  border-bottom: 3px solid #036;
+}
+
+.c thead tr:hover, .c tbody tr:hover {
+  background: lightgray;
+}
+
+table.c tbody th:hover{
+  background: lightgray;
+}
+
+table.c td {
+  width: 350px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.c a:link {
+  color: black;
+  text-decoration: none;
+}
+.c a:visited {
+  color: blue;
+  text-decoration: none;
+}
+.c a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.nbsp{
+	text-align:center
+}
+div.card > a#boardin{
+	float:right;
+}
+div#boardback{
+	z-index:1;
+	display:none;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.4)
+}
+div.board{
+	position:fixed;
+	background: #ffffff;
+	border: 1px solid black;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: 800px;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;	
+}
+form#boardform > input[type=text]#title{
+	margin: 25px;
+	padding: 2px;
+	width:50%;
+	height:50px;
+}
+form#boardform input{
+	display:block;
+}	
+form#boardform > fieldset{
+	width:20%;
+}
+form#boardform > input[type=text]#content{
+	margin:2%;
+	padding:2%;
+	width:96%;
+	height:500px;
+}
+div.board > a{
+	border:1px solid black;
+	height:50px;
+	width:50px;
+	background-color:coral;
+}
+button.button1 {
+	float:right;
+	width:100px;
+	height:50px;
+}
+h3{
+	display:inline;
+}
+label{
+	font-size:30px;
+}
+form#reg input[type=submit],form#reg input[type=reset]{
+	width:30%;
+	height:50px;
+}
+form#reg input[type=text]{
+	height:50px;
+	width:50%;
+}
+/* 페이지 분할 */
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+/* 댓글 모달 */
+#re_modal {
+	position:fixed;
+	background: #ffffff;
+	border: solid 1px gray;
+	top: 50%;
+	left: 50%;
+	width: 25%;
+	height: 30%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+}
