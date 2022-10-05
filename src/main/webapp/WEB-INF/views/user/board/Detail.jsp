@@ -47,7 +47,7 @@ $(document).ready(function(){
 		console.log("확인용"+reply.seqno);
 		replyService.replyupdate(reply,function(result){
 			reply_modal.hide();
-			showlist(1);
+			showlist(page);
 		});
 		
 	});
@@ -56,14 +56,20 @@ $(document).ready(function(){
 		var no = reply_modal.data("rno");
 		replyService.replydelete(no,function(result){
 			reply_modal.hide();
-			showlist(1);
+			showlist(page);
 		});
 	});
 	var page = 1;
-	function showlist(page){
-		replyService.list({bno:board_no,cpage:page || 1},function(replycnt,li){
+	function showlist(cpage){
+		replyService.list({bno:board_no,cpage:cpage || 1},function(replycnt,li){
 			var len=li.length||0;
-			console.log(replycnt)
+			console.log(replycnt);
+			/* 댓글이 등록된 경우 */
+			if(cpage == -1){
+				page = Math.ceil(replycnt/5.0);
+				showlist(page);
+				return;
+			}
 			for(var i=0; i < len; i++){
 				console.log(li[i]);
 			};
@@ -139,7 +145,7 @@ $(document).ready(function(){
 			//alert(result);
 			console.log(result);
 			document.getElementById("content").value = "";
-			showlist(1);
+			showlist(-1);
 		});
 	});
 });

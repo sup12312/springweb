@@ -145,3 +145,7 @@ form#reg input[type=text]{
 	transform: translate(-50%, -50%);
 	border-radius: 15px;
 }
+.page-link{
+	display:inline;
+	width : 10px;
+}
