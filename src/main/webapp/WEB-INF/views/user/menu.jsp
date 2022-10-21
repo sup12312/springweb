@@ -9,6 +9,7 @@
 		<a id="modal1" href="/member/logout">로그아웃</a>
 		<a id="modal1" href="logout.do">마이페이지</a>
 		<a id="modal1">${user.name }님 어서오세요</a>
+		<a href="/chat">채팅</a>
 	</c:when>
 	<c:otherwise>
 		<a id="modal1" href="javascript:login()">로그인</a>
